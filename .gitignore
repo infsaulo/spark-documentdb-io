@@ -1,0 +1,11 @@
+/build
+/.gradle
+/.settings
+/.classpath
+/.project
+/.idea
+/scripts
+/logs
+/bin
+/secrets
+Dockerfile
