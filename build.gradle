@@ -61,11 +61,20 @@ repositories {
 
 dependencies {
 
+    compile ('com.microsoft.azure:azure-documentdb-hadoop:+'){
+        exclude module: 'json-serde-parent'
+        exclude module: 'hadoop-hdfs'
+    }
+
+    compile 'org.apache.spark:spark-core_2.10:+'
+
+    compile 'com.wizzardo.tools:tools:+'
+
     testCompile 'junit:junit:+'
 }
 
 jar {
-    zip64 true
+    zip64=true
     doFirst {
         from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     }
